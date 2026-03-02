@@ -1,7 +1,8 @@
 {
   "name": "KeyMate",
-  "displayName": "KeyMate SSH Helper",
+  "displayName": "KeyMate",
   "version": "0.0.1",
+  "publisher": "MarshallRui",
   "description": "One-click setup for passwordless SSH in Cursor remote windows.",
   "main": "./out/src/extension.js",
   "engines": {
@@ -32,7 +33,7 @@
       ]
     },
     "configuration": {
-      "title": "KeyMate SSH Helper",
+      "title": "KeyMate",
       "properties": {
         "keymate.language": {
           "type": "string",
