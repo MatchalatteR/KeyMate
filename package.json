@@ -1,0 +1,73 @@
+{
+  "name": "KeyMate",
+  "displayName": "KeyMate SSH Helper",
+  "version": "0.0.1",
+  "description": "One-click setup for passwordless SSH in Cursor remote windows.",
+  "main": "./out/src/extension.js",
+  "engines": {
+    "vscode": "^1.109.0"
+  },
+  "extensionKind": [
+    "ui"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "keymate.setupPasswordlessSsh",
+        "title": "KeyMate: Setup Passwordless SSH"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "keymate.setupPasswordlessSsh",
+          "when": "true"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "KeyMate SSH Helper",
+      "properties": {
+        "keymate.language": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "zh",
+            "en"
+          ],
+          "default": "auto",
+          "description": "UI language for KeyMate messages. auto = follow Cursor language."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "test": "npm run compile && mocha \"out/test/**/*.test.js\""
+  },
+  "keywords": [
+    "passwordless",
+    "ssh",
+    "remote"
+  ],
+  "author": "Rui Hu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MatchalatteR/KeyMate"
+  },
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^25.3.3",
+    "@types/vscode": "^1.109.0",
+    "mocha": "^11.7.5",
+    "typescript": "^5.9.3"
+  }
+}
